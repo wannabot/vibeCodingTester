@@ -3,167 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>고양이 버튼</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: #f2f2f2;
-      font-family: Arial, "Malgun Gothic", sans-serif;
-      color: #111;
-    }
-
-    .wrap {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-    }
-
-    .box {
-      width: 100%;
-      max-width: 720px;
-      background: white;
-      border: 5px solid #111;
-      padding: 32px;
-      box-shadow: 10px 10px 0 #111;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0 0 20px;
-      font-size: 64px;
-      line-height: 1;
-      letter-spacing: -2px;
-    }
-
-    .main-text {
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-
-    .sub-text {
-      font-size: 20px;
-      margin-bottom: 28px;
-    }
-
-    .line {
-      height: 4px;
-      background: #111;
-      margin: 24px 0;
-    }
-
-    .btn {
-      border: 4px solid #111;
-      background: #fff;
-      padding: 14px 22px;
-      font-size: 22px;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 6px 6px 0 #111;
-    }
-
-    .btn:active {
-      transform: translate(4px, 4px);
-      box-shadow: 2px 2px 0 #111;
-    }
-
-    .msg {
-      margin-top: 28px;
-      padding: 18px;
-      border: 4px dashed #111;
-      background: #efefef;
-      font-size: 28px;
-      font-weight: 900;
-      min-height: 80px;
-    }
-
-    .footer {
-      margin-top: 24px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #444;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 44px;
-      }
-
-      .main-text {
-        font-size: 24px;
-      }
-
-      .sub-text {
-        font-size: 16px;
-      }
-
-      .msg {
-        font-size: 22px;
-      }
-
-      .btn {
-        font-size: 18px;
-      }
-    }
-  </style>
+  <title>Cat Variables Atelier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <div class="box">
-      <h1>고양이 버튼</h1>
-      <div class="main-text">클릭하면 랜덤 고양이 메시지가 나옵니다</div>
-      <div class="sub-text">특별한 기능은 없고, 그냥 누르면 문구가 바뀝니다.</div>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">GPT Image Cat Studio</p>
+        <h1>고양이 변수마다<br />한 장의 무드를 붙인 작은 아틀리에</h1>
+        <p class="hero-text">
+          각 변수는 GPT 이미지 생성용 프롬프트와 함께 하나의 장면으로 구성됩니다.
+          사랑스러운 성격표처럼 보고, 마음에 드는 무드 카드를 골라보세요.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="shuffleButton" type="button">오늘의 최애 변수 뽑기</button>
+          <p class="hero-note">랜덤 추천이 아래 스포트라이트와 카드 강조에 반영됩니다.</p>
+        </div>
+      </div>
 
-      <div class="line"></div>
+      <section class="spotlight" aria-live="polite">
+        <div class="spotlight-image-frame">
+          <img id="spotlightImage" class="spotlight-image" src="" alt="" />
+        </div>
+        <div class="spotlight-copy">
+          <p class="spotlight-label">Today&apos;s Cat Variable</p>
+          <h2 id="spotlightName"></h2>
+          <p id="spotlightValue" class="spotlight-value"></p>
+          <p id="spotlightDescription" class="spotlight-description"></p>
+          <div class="prompt-box">
+            <span>GPT 이미지 프롬프트</span>
+            <p id="spotlightPrompt"></p>
+          </div>
+        </div>
+      </section>
+    </header>
 
-      <button class="btn" onclick="changeMessage()">눌러보기</button>
+    <main>
+      <section class="intro-strip">
+        <p>캣타워, 햇살, 간식, 호기심. 고양이 애호가가 좋아할 디테일을 변수 단위로 큐레이션했습니다.</p>
+      </section>
 
-      <div class="msg" id="msgBox">고양이 발견</div>
-
-      <div class="footer">made for cat</div>
-    </div>
+      <section class="gallery-section">
+        <div class="section-head">
+          <p class="eyebrow">Curated Gallery</p>
+          <h2>고양이 변수 이미지 컬렉션</h2>
+        </div>
+        <div class="variable-grid" id="variableGrid"></div>
+      </section>
+    </main>
   </div>
 
-  <script>
-    const messages = [
-      "고양이 발견",
-      "고양이 접근 중",
-      "고양이 모드 활성화",
-      "고양이가 들어왔습니다",
-      "여기는 고양이 구역",
-      "고양이 확인 완료",
-      "고양이 접속 성공",
-      "반갑다 집사야",
-      "냥냥 경보 발령",
-      "고양이 에너지 충전 완료",
-      "지금부터 냥타임",
-      "고양이 기분 최고조",
-      "집사 호출 중",
-      "사료 레이더 가동",
-      "캣닢 신호 감지",
-      "고양이 집중 모드",
-      "오늘도 냥승리",
-      "졸음 80% 장전",
-      "창밖 감시 시작",
-      "폭신한 자리 확보",
-      "냥펀치 준비 완료",
-      "간식 요청 접수",
-      "꼬리 흔들림 감지",
-      "매우 귀여움 상태",
-      "고양이 우선 모드"
-    ];
+  <template id="cardTemplate">
+    <article class="cat-card">
+      <div class="card-image-wrap">
+        <img class="card-image" src="" alt="" />
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <p class="card-kicker"></p>
+          <h3 class="card-title"></h3>
+        </div>
+        <p class="card-value"></p>
+        <p class="card-description"></p>
+        <div class="card-prompt">
+          <span>Prompt</span>
+          <p></p>
+        </div>
+      </div>
+    </article>
+  </template>
 
-    function changeMessage() {
-      const msgBox = document.getElementById("msgBox");
-      const randomIndex = Math.floor(Math.random() * messages.length);
-      msgBox.textContent = messages[randomIndex];
-    }
-  </script>
+  <script src="../script.js"></script>
 </body>
 </html>
