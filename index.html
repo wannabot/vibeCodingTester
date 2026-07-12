@@ -62,6 +62,40 @@
         </div>
         <div class="variable-grid" id="variableGrid"></div>
       </section>
+
+      <section class="partner-section" aria-labelledby="partnerTitle">
+        <div class="partner-copy">
+          <p class="eyebrow">Partnership</p>
+          <h2 id="partnerTitle">제휴문의</h2>
+          <p>콘텐츠 협업, 브랜드 제휴, 이미지 제작 문의를 남겨주세요. 확인 후 연락드리겠습니다.</p>
+        </div>
+
+        <form class="partner-form" action="https://formspree.io/f/xaqrwlpd" method="POST">
+          <input type="hidden" name="_subject" value="Cat Variables Atelier 제휴문의" />
+
+          <label>
+            <span>이름</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+
+          <label>
+            <span>회사/브랜드</span>
+            <input type="text" name="company" autocomplete="organization" />
+          </label>
+
+          <label>
+            <span>이메일</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+
+          <label>
+            <span>문의 내용</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <button class="primary-btn" type="submit">제휴문의 보내기</button>
+        </form>
+      </section>
     </main>
   </div>
 

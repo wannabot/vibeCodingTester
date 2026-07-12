@@ -288,6 +288,67 @@ h1 {
   margin-top: 36px;
 }
 
+.partner-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 24px;
+  margin-top: 36px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.partner-copy p:last-child {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+.partner-form {
+  display: grid;
+  gap: 14px;
+}
+
+.partner-form label {
+  display: grid;
+  gap: 6px;
+}
+
+.partner-form span {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.partner-form input,
+.partner-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 13px 14px;
+  background: var(--paper-strong);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.partner-form textarea {
+  resize: vertical;
+  min-height: 132px;
+}
+
+.partner-form input:focus,
+.partner-form textarea:focus {
+  border-color: rgba(217, 119, 66, 0.58);
+  box-shadow: 0 0 0 4px rgba(217, 119, 66, 0.14);
+}
+
 .section-head {
   margin-bottom: 20px;
 }
@@ -374,6 +435,10 @@ h1 {
   .variable-grid {
     grid-template-columns: 1fr;
   }
+
+  .partner-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -390,12 +455,17 @@ h1 {
   .hero-copy,
   .spotlight,
   .intro-strip,
-  .cat-card {
+  .cat-card,
+  .partner-section {
     border-radius: 24px;
   }
 
   .hero-copy {
     padding: 28px 22px;
+  }
+
+  .partner-section {
+    padding: 22px;
   }
 
   .spotlight {
