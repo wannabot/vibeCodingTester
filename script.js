@@ -4,7 +4,7 @@ const catVariables = [
     category: "Sun Mood",
     name: "햇살 낮잠 지수",
     value: "91%",
-    description: "창가에 길게 누운 치즈냥 무드. 포근함이 페이지 전체 분위기를 잡아줍니다.",
+    description: "창가를 길게 데운 치즈빛 무드. 따뜻함이 페이지 전체 분위기를 부드럽게 만들어줍니다.",
     prompt: "A fluffy orange cat taking a luxurious nap in golden afternoon sunlight, cozy Korean home interior, soft editorial photography, warm cream and honey tones, high detail, dreamy atmosphere",
     image: "data:image/svg+xml;utf8," + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -35,7 +35,7 @@ const catVariables = [
     category: "Curiosity",
     name: "호기심 레이더",
     value: "활성화",
-    description: "새 장난감을 발견한 순간의 동그란 눈. 카드 전개에서 생기를 담당합니다.",
+    description: "작은 장난감을 발견한 순간의 반짝임을 담은 카드입니다. 화면에 경쾌한 리듬을 더합니다.",
     prompt: "A tuxedo cat investigating a floating feather toy, playful motion, boutique editorial illustration, mint and coral accents, crisp lighting, charming and curious expression",
     image: "data:image/svg+xml;utf8," + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -63,7 +63,7 @@ const catVariables = [
     category: "Treat Signal",
     name: "간식 감지력",
     value: "참치 냄새 추적 중",
-    description: "부엌 쪽을 향해 즉시 반응하는 집중력. 애호가 감성을 만드는 귀여운 생활감 포인트입니다.",
+    description: "부엌 쪽을 향해 즉시 반응하는 집중형 취향입니다. 귀여운 생활감이 살아납니다.",
     prompt: "A silver tabby cat sniffing the air for tuna treats in a stylish kitchen, whimsical lifestyle scene, peach and sage palette, premium magazine cover look, expressive whiskers",
     image: "data:image/svg+xml;utf8," + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -91,7 +91,7 @@ const catVariables = [
     category: "Night Energy",
     name: "새벽 질주 모드",
     value: "03:17 AM 부스트",
-    description: "밤이 되면 캣타워와 복도를 누비는 에너지. 페이지에 리듬감을 더하는 다이내믹 카드입니다.",
+    description: "밤이 되면 복도를 누비는 에너지입니다. 페이지에 영화 같은 야간 무드를 더합니다.",
     prompt: "A sleek black cat sprinting through a moonlit living room and cat tower, cinematic action shot, deep teal and moon cream colors, stylish motion blur, high-end pet editorial",
     image: "data:image/svg+xml;utf8," + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
