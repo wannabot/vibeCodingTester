@@ -119,6 +119,9 @@ const spotlightPrompt = document.getElementById("spotlightPrompt");
 const variableGrid = document.getElementById("variableGrid");
 const cardTemplate = document.getElementById("cardTemplate");
 const shuffleButton = document.getElementById("shuffleButton");
+const themeToggle = document.getElementById("themeToggle");
+const themeToggleIcon = themeToggle.querySelector(".theme-toggle__icon");
+const themeToggleText = themeToggle.querySelector(".theme-toggle__text");
 
 function renderCards() {
   const fragment = document.createDocumentFragment();
@@ -160,6 +163,25 @@ function setSpotlight(item) {
   });
 }
 
+function setTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.dataset.theme = theme;
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeToggleIcon.textContent = isDark ? "☀" : "☾";
+  themeToggleText.textContent = isDark ? "Light mode" : "Dark mode";
+  localStorage.setItem("catVariablesTheme", theme);
+}
+
+function getInitialTheme() {
+  const savedTheme = localStorage.getItem("catVariablesTheme");
+
+  if (savedTheme === "dark" || savedTheme === "light") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 function pickRandomVariable() {
   const randomIndex = Math.floor(Math.random() * catVariables.length);
   setSpotlight(catVariables[randomIndex]);
@@ -167,4 +189,9 @@ function pickRandomVariable() {
 
 renderCards();
 setSpotlight(catVariables[0]);
+setTheme(getInitialTheme());
 shuffleButton.addEventListener("click", pickRandomVariable);
+themeToggle.addEventListener("click", () => {
+  const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
+  setTheme(nextTheme);
+});
