@@ -96,6 +96,18 @@
           <button class="primary-btn" type="submit">제휴문의 보내기</button>
         </form>
       </section>
+
+      <section class="comments-section" aria-labelledby="commentsTitle">
+        <div class="section-head">
+          <p class="eyebrow">Comments</p>
+          <h2 id="commentsTitle">댓글</h2>
+        </div>
+        <div id="disqus_thread"></div>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </section>
     </main>
   </div>
 
@@ -120,5 +132,20 @@
   </template>
 
   <script src="script.js"></script>
+  <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = window.location.pathname || "cat-variables-atelier";
+    };
+
+    (function() {
+      var d = document;
+      var s = d.createElement("script");
+      s.src = "https://jocoding-learning.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <script id="dsq-count-scr" src="//jocoding-learning.disqus.com/count.js" async></script>
 </body>
 </html>

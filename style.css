@@ -301,6 +301,32 @@ h1 {
   backdrop-filter: blur(12px);
 }
 
+.comments-section {
+  margin-top: 36px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+#disqus_thread {
+  margin-top: 18px;
+}
+
+.comments-section noscript {
+  display: block;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.comments-section a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .partner-copy p:last-child {
   margin: 16px 0 0;
   color: var(--muted);
@@ -456,7 +482,8 @@ h1 {
   .spotlight,
   .intro-strip,
   .cat-card,
-  .partner-section {
+  .partner-section,
+  .comments-section {
     border-radius: 24px;
   }
 
@@ -464,7 +491,8 @@ h1 {
     padding: 28px 22px;
   }
 
-  .partner-section {
+  .partner-section,
+  .comments-section {
     padding: 22px;
   }
 
